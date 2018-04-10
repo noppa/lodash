@@ -20,6 +20,10 @@ function compareAscending(value, other) {
     const othIsReflexive = other === other
     const othIsSymbol = isSymbol(other)
 
+    if (!valIsReflexive && !othIsReflexive) {
+      return 0
+    }
+
     const val = typeof value == 'string'
       ? value.localeCompare(other)
       : -other
